@@ -6,5 +6,4 @@ class StuffSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Stuff
-
-    fields = ('title', 'description')
+        fields = ('title', 'description')
