@@ -75,10 +75,10 @@ WSGI_APPLICATION = 'api_demo_site.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
-
-DATABASES = {
-    'default': dj_database_url.config()
-}
+# Heroku-specific:
+# https://devcenter.heroku.com/articles/getting-started-with-python#provision-a-database
+DATABASES = {}
+DATABASES['default'] = dj_database_url.config()
 
 # Enable Persistent Connections
 # Keeps Django from making new DB connections for every request cycle, reusing
@@ -111,3 +111,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser'),
+    'PAGE_SIZE': 10,
+}
