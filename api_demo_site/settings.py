@@ -16,21 +16,16 @@ import os
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
 
-# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-# print('BASE_DIR: {}'.format(BASE_DIR))
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-# print('BASE_DIR: {}'.format(BASE_DIR))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '5c7rhlr1l4o&8+&(wt3h2p$+jh!t*znwwv7m+2l@(9i@u@qyiq'
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
+DEBUG = os.environ['DEBUG']
 
 
 # Application definition
